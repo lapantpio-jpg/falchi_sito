@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squadriglia Falchi - Home</title>
+    <link rel="stylesheet" href="site-falchi.css" />
+    <script src="site.js"></script>
+    <link rel="stylesheet" href="admin-editor.css" />
+    <link rel="shortcut icon" href="pngwing.com.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-brand">
+        <span class="paw">🐾</span>
+        <span>Squadriglia Falchi</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="nodi.html">Nodi</a></li>
+          <li><a href="legature.html">Legature</a></li>
+          <li><a href="costruzioni.html">Costruzioni</a></li>
+          <li><a href="commenti.html">Commenti</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          &#9776;
+        </button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Squadriglia Falchi</h1>
+          <p class="hero-sub">Campismo · Tecnica · Avventura</p>
+          <a href="#chi-siamo" class="btn-hero">Scopri chi siamo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light" id="chi-siamo">
+      <div class="container">
+        <div class="content-card">
+          <h2>Squadriglia Falchi</h2>
+          <p>
+            Siamo la squadriglia Falchi: un gruppo unito dalla voglia di
+            imparare, mettersi alla prova e vivere il campismo con
+            responsabilita e spirito di squadra.
+          </p>
+          <img
+            class="about-photo"
+            src="Falchi.jpeg"
+            alt="Membri della squadriglia Falchi durante una uscita"
+          />
+        </div>
+
+        <h2 class="section-title">I nostri valori</h2>
+        <div class="values-grid">
+          <article class="value-card">
+            <span class="value-icon">🌲</span>
+            <h3>Natura</h3>
+            <p>Rispettiamo l ambiente e impariamo a viverlo con cura.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon">🤝</span>
+            <h3>Squadra</h3>
+            <p>Collaboriamo, ci aiutiamo e cresciamo insieme.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon">🔥</span>
+            <h3>Impegno</h3>
+            <p>Portiamo a termine i compiti con costanza e serieta.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon">🧭</span>
+            <h3>Avventura</h3>
+            <p>Ogni uscita e una occasione per imparare qualcosa di nuovo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Esplora il sito</h2>
+        <div class="cards-grid">
+          <a class="card card--animated" href="#chi-siamo">
+            <div class="card__front">
+              <h3 class="card__front-title">Chi siamo</h3>
+            </div>
+            <div class="card__content">
+              <p class="card__description">
+                La storia, il gruppo e i valori della squadriglia Falchi.
+              </p>
+              <div class="card-icon">🦅</div>
+            </div>
+          </a>
+          <a class="card card--animated" href="nodi.html">
+            <div class="card__front">
+              <h3 class="card__front-title">Nodi</h3>
+            </div>
+            <div class="card__content">
+              <p class="card__description">
+                Nodi utili in uscita: descrizione, uso e buone pratiche.
+              </p>
+              <div class="card-icon">🪢</div>
+            </div>
+          </a>
+          <a class="card card--animated" href="legature.html">
+            <div class="card__front">
+              <h3 class="card__front-title">Legature</h3>
+            </div>
+            <div class="card__content">
+              <p class="card__description">
+                Tecniche fondamentali per costruzioni solide e sicure.
+              </p>
+              <div class="card-icon">🛠️</div>
+            </div>
+          </a>
+          <a class="card card--animated" href="costruzioni.html">
+            <div class="card__front">
+              <h3 class="card__front-title">Costruzioni</h3>
+            </div>
+            <div class="card__content">
+              <p class="card__description">
+                Idee e progetti per campo, portali e angolo di squadriglia.
+              </p>
+              <div class="card-icon">🏕️</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="home-comment-box">
+          <div class="comment-section">
+            <h3>Lascia un pensiero veloce</h3>
+            <textarea
+              id="blog-comment"
+              name="blog-comment"
+              placeholder="Scrivi qui il tuo commento..."
+            ></textarea>
+            <button id="save-comment" type="button">Salva commento</button>
+            <a class="comments-link" href="commenti.html">Apri commenti</a>
+            <a class="view-all-comments-box" href="commenti.html"
+              >Visualizza tutti i commenti</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <blockquote>
+        "Lascia il mondo un po migliore di come l hai trovato."
+        <cite>- Robert Baden-Powell</cite>
+      </blockquote>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Squadriglia Falchi - Fatto con passione dalla Sq Falchi</p>
+    </footer>
+
+    <script src="admin-editor.js"></script>
+    <script src="site.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

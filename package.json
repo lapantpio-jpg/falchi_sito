@@ -1,0 +1,12 @@
+{
+  "name": "falchi-sito",
+  "version": "1.0.0",
+  "description": "Sito della Squadriglia Falchi",
+  "main": "js/server.js",
+  "scripts": {
+    "start": "node js/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

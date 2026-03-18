@@ -1,0 +1,126 @@
+body.admin-edit-mode {
+  padding-bottom: 96px;
+}
+
+.site-admin-footer {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  width: min(220px, calc(100vw - 24px));
+  z-index: 9999;
+  background: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+}
+
+.site-admin-title {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.site-admin-body {
+  border-top: 1px solid #383838;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.site-admin-body[hidden] {
+  display: none !important;
+}
+
+.site-admin-actions,
+.site-admin-login,
+.site-admin-style {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.site-admin-style {
+  align-items: center;
+}
+
+.site-admin-login input,
+.site-admin-style input,
+.site-admin-style select {
+  border: 1px solid #676767;
+  border-radius: 6px;
+  padding: 5px 7px;
+  background: #f3f3f3;
+  color: #111;
+}
+
+.site-admin-login input {
+  width: calc(50% - 3px);
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.site-admin-style input[type="number"] {
+  width: 72px;
+}
+
+.site-admin-style label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.site-admin-footer button {
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: #e2e2e2;
+  color: #121212;
+  font-weight: 600;
+  padding: 5px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.site-admin-footer button:hover {
+  background: #d4d4d4;
+}
+
+.site-admin-status {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.35;
+  min-height: 18px;
+}
+
+.admin-edit-target {
+  transition: outline-color 0.15s ease;
+}
+
+body.admin-edit-mode .admin-edit-target[contenteditable="true"] {
+  outline: 1px dashed rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+body.admin-edit-mode .admin-selected {
+  outline: 3px solid #ffd24d !important;
+  outline-offset: 2px;
+}
+
+body.admin-edit-mode .box {
+  cursor: move;
+}
+
+body.admin-edit-mode .box.admin-drag-over {
+  outline: 3px dashed #ffd24d;
+  outline-offset: 2px;
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squadriglia Falchi - Commenti</title>
+    <link rel="stylesheet" href="site-falchi.css" />
+    <link rel="stylesheet" href="admin-editor.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-brand">
+        <span class="paw">🐾</span>
+        <span>Squadriglia Falchi</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="nodi.html">Nodi</a></li>
+          <li><a href="legature.html">Legature</a></li>
+          <li><a href="costruzioni.html">Costruzioni</a></li>
+          <li><a href="commenti.html" class="active">Commenti</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          &#9776;
+        </button>
+      </nav>
+    </header>
+
+    <div class="page-header">
+      <h1>Commenti</h1>
+      <p>Scrivi un messaggio e leggi i commenti della squadriglia</p>
+    </div>
+
+    <main class="comments-page">
+      <section class="admin-panel" aria-label="Accesso amministratore">
+        <h2>Area amministratore</h2>
+        <div class="admin-fields">
+          <input
+            id="admin-username"
+            type="text"
+            placeholder="Nome utente"
+            autocomplete="username"
+          />
+          <input
+            id="admin-password"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password"
+          />
+          <button id="admin-login" type="button">Accedi</button>
+          <button id="admin-logout" type="button">Esci</button>
+        </div>
+        <p id="admin-status" aria-live="polite"></p>
+      </section>
+      <section id="comments-list" aria-live="polite"></section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Squadriglia Falchi - Fatto con passione dalla Sq Falchi</p>
+    </footer>
+
+    <script src="site.js"></script>
+    <script src="admin-editor.js"></script>
+    <script src="commenti.js"></script>
+  </body>
+</html>

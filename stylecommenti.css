@@ -1,0 +1,168 @@
+:root {
+  --bg-deep: #0f3826;
+  --bg-mid: #1e5e3f;
+  --bg-light: #3e7d4f;
+  --card: #f4f0e4;
+  --card-strong: #ece3cf;
+  --ink: #1f2b22;
+  --accent: #d8a03a;
+  --accent-hover: #e9b44f;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family:
+    "Avenir Next", "Century Gothic", "Gill Sans", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(
+      circle at 12% 16%,
+      rgba(255, 255, 255, 0.09),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 85% 11%,
+      rgba(246, 207, 131, 0.13),
+      transparent 30%
+    ),
+    linear-gradient(
+      160deg,
+      var(--bg-deep) 0%,
+      var(--bg-mid) 50%,
+      var(--bg-light) 100%
+    );
+}
+
+.comments-page {
+  width: min(760px, calc(100% - 28px));
+  margin: 22px auto;
+  padding: 24px;
+  border: 1px solid rgba(40, 65, 51, 0.75);
+  border-radius: 22px;
+  background: linear-gradient(155deg, var(--card) 0%, var(--card-strong) 100%);
+  color: var(--ink);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 8px 0 10px;
+  font-family: Rockwell, Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 5vw, 44px);
+}
+
+h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.back-link {
+  color: #1c4f37;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.admin-panel {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid rgba(40, 65, 51, 0.35);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.admin-fields {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-fields input {
+  padding: 8px 10px;
+  border: 1px solid #b2a07d;
+  border-radius: 6px;
+  background-color: #fffdf6;
+  color: #111;
+}
+
+.admin-fields button {
+  padding: 8px 12px;
+  border: 1px solid #7e5c25;
+  border-radius: 6px;
+  background-color: var(--accent);
+  color: #19231d;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-fields button:hover {
+  background-color: var(--accent-hover);
+}
+
+#admin-status {
+  margin: 10px 0 0;
+  min-height: 20px;
+  font-weight: 600;
+}
+
+#comments-list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #fffdf6;
+  border: 1px solid #cdb88e;
+  border-radius: 12px;
+  color: #111;
+  padding: 12px;
+}
+
+.comment-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  flex: 1;
+}
+
+.delete-comment {
+  border: 1px solid #8d2a2a;
+  border-radius: 6px;
+  background-color: #c64444;
+  color: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.delete-comment:hover {
+  background-color: #af3232;
+}
+
+.empty-state {
+  background-color: #fffdf6;
+  border: 1px solid #cdb88e;
+  border-radius: 12px;
+  color: #222;
+  padding: 12px;
+}
+
+@media (max-width: 760px) {
+  .comments-page {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}

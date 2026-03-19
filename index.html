@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Squadriglia Falchi - Home</title>
-    <link rel="stylesheet" href="site-falchi.css" />
-    <script src="site.js"></script>
-    <link rel="stylesheet" href="admin-editor.css" />
-    <link rel="shortcut icon" href="pngwing.com.png" type="image/x-icon" />
+    <link rel="stylesheet" href="Style/site-falchi.css" />
+    <script src="js/site.js"></script>
+    <img src="immagini/Falchi.jpeg" />
+    <link rel="stylesheet" href="../Style/admin-editor.css" />
+    <link
+      rel="shortcut icon"
+      href="../immagini/agesci.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <header class="navbar">
@@ -50,7 +55,7 @@
           </p>
           <img
             class="about-photo"
-            src="Falchi.jpeg"
+            src="../immagini/Falchi.jpeg"
             alt="Membri della squadriglia Falchi durante una uscita"
           />
         </div>
@@ -138,16 +143,20 @@
         <div class="home-comment-box">
           <div class="comment-section">
             <h3>Lascia un pensiero veloce</h3>
+            <input
+              id="autore-home"
+              type="text"
+              placeholder="Il tuo nome..."
+            />
             <textarea
               id="blog-comment"
               name="blog-comment"
               placeholder="Scrivi qui il tuo commento..."
             ></textarea>
             <button id="save-comment" type="button">Salva commento</button>
+            <p id="feedback-msg" style="display:none; color: green;">Commento salvato!</p>
             <a class="comments-link" href="commenti.html">Apri commenti</a>
-            <a class="view-all-comments-box" href="commenti.html"
-              >Visualizza tutti i commenti</a
-            >
+            <a class="view-all-comments-box" href="commenti.html">Visualizza tutti i commenti</a>
           </div>
         </div>
       </div>
@@ -164,8 +173,46 @@
       <p>&copy; 2026 Squadriglia Falchi - Fatto con passione dalla Sq Falchi</p>
     </footer>
 
-    <script src="admin-editor.js"></script>
-    <script src="site.js"></script>
-    <script src="index.js"></script>
+    <script src="../js/admin-editor.js"></script>
+    <script src="../js/site.js"></script>
+    <script src="../js/index.js"></script>
+
+    <!-- Supabase commenti -->
+    <script type="module">
+      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+      const supabase = createClient(
+        'https://gylwgehteumkdcqngium.supabase.co',
+        'QUI INCOLLA LA TUA PUBLISHABLE KEY'
+      )
+
+      document.getElementById('save-comment').addEventListener('click', async () => {
+        const autore = document.getElementById('autore-home').value.trim()
+        const testo = document.getElementById('blog-comment').value.trim()
+
+        if (!autore || !testo) {
+          alert('Inserisci il tuo nome e il commento!')
+          return
+        }
+
+        const { error } = await supabase
+          .from('commenti')
+          .insert([{ autore, testo }])
+
+        if (error) {
+          console.error(error)
+          alert('Errore nel salvataggio, riprova.')
+          return
+        }
+
+        // Svuota i campi e mostra conferma
+        document.getElementById('autore-home').value = ''
+        document.getElementById('blog-comment').value = ''
+        const msg = document.getElementById('feedback-msg')
+        msg.style.display = 'block'
+        setTimeout(() => msg.style.display = 'none', 3000)
+      })
+    </script>
+
   </body>
 </html>
